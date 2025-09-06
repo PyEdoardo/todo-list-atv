@@ -62,3 +62,6 @@ useEffect(() => {
   darkMode ? raiz.classList.add("dark") : raiz.classList.remove("dark");
 }, [darkMode]);
 ```
+
+## OBS
+Tirando o Bootstrap, nunca usei css puro nem tailwind, tive ajuda do copilot pra fazer a estilização pois não sabia mexer, porém com os componentes do shad aprendi aos poucos.
