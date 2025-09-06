@@ -19,6 +19,7 @@ export interface TodoProps {
   nome: string;
   categoria: string;
   concluido: boolean;
+  dataCriacao: Date;
   onToggle: (id: number) => void;
   onRemove: (id: number) => void;
 }
@@ -31,7 +32,6 @@ export function Todo({
   onToggle,
   onRemove,
 }: TodoProps): React.JSX.Element {
-    
   const [transparente, setTransparente] = React.useState(false);
   return (
     <Card className={`w-full border bg-card transition-colors rounded-md ${transparente ? 'opacity-50' : ''}`}>
@@ -48,6 +48,9 @@ export function Todo({
           >
             {nome}
           </span>
+          <Badge variant='secondary' className={'ml-2 shrink-0'} title='Data de Criação'>
+            {new Date().getDate()} | {new Date().getMonth() + 1} | {new Date().getFullYear()}
+          </Badge>
         </div>
         <div className="ml-2 flex items-center gap-2">
           <Badge
